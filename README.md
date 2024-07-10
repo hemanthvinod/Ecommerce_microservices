@@ -52,7 +52,9 @@ It consists of several services that interact to provide various functionalities
 4. **Testing**:
    - Use tools like Postman to test API endpoints exposed by each service.
    - Verify integration between services through Kafka messaging.
-
+5. **Improvements**
+   - implementing distributed tracing
+   - securing the microservices 
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit pull requests.

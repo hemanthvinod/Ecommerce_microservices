@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/paymentDb
+    username: Ecommerce
+    password: Ecommerceee@123
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+  kafka:
+    producer:
+      bootstrap-server: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      #for the security purpose we inform the consumer about the package that we are sending
+      properties:
+        spring.json.type.mapping: paymentConfirmation:com.microservices.Payment.service.resource.PaymentNotificationRequest
+
+server:
+  port: 8095
